@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>11st</title>
+  </head>
+  <div class="nav-container">
+    <button class="nav-button" id="back-button" style="visibility: visible">
+      back
+    </button>
+    <div id="clock"></div>
+    <button class="nav-button" id="new-button" style="visibility: visible">
+      new
+    </button>
+  </div>
+  <body>
+    <div class="link-container">
+      <div class="link-box">
+        <a class="hash" href="#alarm">알람</a>
+      </div>
+
+      <div class="link-box">
+        <a class="hash" href="#memo">메모</a>
+      </div>
+
+      <div class="link-box">
+        <a class="hash" href="#photo">포토</a>
+      </div>
+
+      <!--Content-->
+    </div>
+    <div id="hash-app"></div>
+  </body>
+
+  <script>
+    var clockTarget = document.getElementById("clock");
+    var backBtn = document.getElementById("back-button");
+
+    function clock() {
+      var now = new Date();
+      var year = now.getFullYear() + "년 ";
+      var month = now.getMonth() + "월 ";
+      var date = now.getDate() + "일 ";
+      var hours = now.getHours() + "시 ";
+      var minutes = now.getMinutes() + "분 ";
+      var seconds = now.getSeconds() + "초 ";
+
+      var time = year + month + date + hours + minutes + seconds;
+      clockTarget.innerText = time;
+    }
+
+    function init() {
+      clock();
+      setInterval(clock, 1000);
+    }
+
+    init();
+
+    backBtn.addEventListener("click", () => {
+      window.history.back();
+    });
+  </script>
+</html>
