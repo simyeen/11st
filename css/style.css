@@ -32,15 +32,6 @@ span {
   text-align: center;
 }
 
-.link-box {
-  padding: 20px 0px 20px 0px;
-  display: inline-block;
-  width: 170px;
-  height: 50px;
-  text-align: center;
-  border: 1px solid #4b4b4b;
-}
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -55,6 +46,44 @@ span {
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 100;
 
   border: 3px solid blue;
 }
+
+/* 공이 자유자재로 움직일 수 있도록 position을 'absolute'로 설정 */
+.ball {
+  position: absolute;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 공을 선택했을 때, 그림자가 생기도록 설정 */
+.ball:hover {
+  box-shadow: 0 0 10px 0 darkgray;
+  cursor: pointer;
+}
+
+/* 공의 색상 설정 */
+.green {
+  background-color: lightgreen;
+  width: 100px;
+  height: 100px;
+}
+.blue {
+  background-color: lightblue;
+  left: 105px;
+  width: 100px;
+  height: 100px;
+}
+
+.pink {
+  background-color: lightpink;
+  left: 205px;
+  width: 100px;
+  height: 100px;
+}
+
+/* 공의 크기 설정 */
